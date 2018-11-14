@@ -1,0 +1,59 @@
+$groups$matter: true
+
+$groups$matter$order: default
+algebra:
+  $groups$matter$order: date
+geometry:
+  $groups$matter$order: date
+combinatorics:
+  $groups$matter$order: date
+olympiad:
+  $groups$matter$order: date
+
+Integral:
+  $groups$delegate: false
+  $groups$delegate$into: false
+  $groups$matter: false
+  $groups$matter$into: false
+
+  $style:
+  - document class: book
+    options: [10pt, a4paper]
+  - delegate: ..[no-document-class]
+
+  $matter[-add-toc]:
+  - .[add-toc]
+
+  $matter[-integral,add-toc]:
+
+  - error:
+      "'source-link' and 'print' options are incompatible"
+    condition: [source-link, print]
+
+  - preamble package: hyperref
+    condition: -print
+  - preamble verbatim: \hypersetup{colorlinks}
+    provide: hypersetup:colorlinks
+    condition: [source-link, -print]
+
+  - verbatim: \frontmatter
+  - - delegate: /integral[-add-toc]
+  - verbatim: \tableofcontents
+
+  - verbatim: \mainmatter
+  - delegate: .[integral]
+
+  $matter[integral]:
+  - delegate: g10r1
+  - delegate: g10r2
+  - delegate: g10r3
+  - delegate: g11r1
+  - delegate: g11r2
+
+  g9r1:  {$training$matter$chapter: true}
+  g9r2:  {$training$matter$chapter: true}
+  g10r1:  {$training$matter$chapter: true}
+  g10r2:  {$training$matter$chapter: true}
+  g11r1:  {$training$matter$chapter: true}
+  g11r2:  {$training$matter$chapter: true}
+

@@ -1,0 +1,29 @@
+jeolm:
+  $target$able: on
+
+  $build$outname: jeolm
+
+  $build$style:
+    # generic setup
+    - compiler: pdflatex
+    - document class: ltxdoc
+    - package: inputenc
+      options: [utf8]
+    - package: fontenc
+      options: [T2A]
+    - package: babel
+      options: [russian, english]
+    # documentation setup
+    - package: colordoc
+      options: [braces]
+    - verbatim: \DisableCrossrefs
+    - verbatim: \OnlyDescription
+      condition: -complete
+    - verbatim: \CodelineNumbered
+      condition: complete
+    # jeolm
+    - delegate: .
+
+  $build$matter:
+    - delegate: .[no-header]
+

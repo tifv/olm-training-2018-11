@@ -1,0 +1,60 @@
+!!omap
+
+- $large$common$timetable: true
+- $common$timetable: &common-timetable !!omap
+  - 2018-11-05: [   2, 3]
+  - 2018-11-06: [1, 2, 3]
+  - 2018-11-07: [1, 2, 3]
+  - 2018-11-08: [1, 2, 3]
+  - 2018-11-09: [1, 2, 3]
+  - 2018-11-10: [      3]
+  - 2018-11-11: [       ]
+  - 2018-11-12: [1, 2, 3]
+  - 2018-11-13: [1, 2, 3]
+  - 2018-11-14: [1, 2, 3]
+  - 2018-11-15: [1, 2, 3]
+  - 2018-11-16: [1, 2, 3]
+  - 2018-11-17: [1, 2   ]
+
+- $large$groups[g9r1]: true
+- $groups[g9r1]:
+    name: 'Ласточки'
+    code: '9-1'
+    timetable: *common-timetable
+
+- $large$groups[g9r2]: true
+- $groups[g9r2]:
+    name: 'Стрижи'
+    code: '9-2'
+    timetable: *common-timetable
+
+- $large$groups[g10r1]: true
+- $groups[g10r1]:
+    name: 'Во́роны'
+    code: '10-1'
+    timetable: *common-timetable
+
+- $large$groups[g10r2]: true
+- $groups[g10r2]:
+    name: 'Скворцы'
+    code: '10-2'
+    timetable: *common-timetable
+
+- $large$groups[g11r1]: true
+- $groups[g11r1]:
+    name: 'Пеликаны'
+    code: '11-1'
+    timetable: *common-timetable
+
+- $large$groups[g11r2]: true
+- $groups[g11r2]:
+    name: 'Цапли'
+    code: '11-2'
+    timetable: *common-timetable
+
+- $large$groups[gX]: true
+- $groups[gX]:
+    name: 'Куры'
+    code: 'X'
+    timetable: *common-timetable
+

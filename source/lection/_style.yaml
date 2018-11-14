@@ -1,0 +1,4 @@
+$style:
+- ..
+- verbatim: \renewcommand\jeolmgroupnames{{\large Анонс лекции}}
+  provide: renewcommand-jeolmgroupnames
