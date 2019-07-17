@@ -1,8 +1,7 @@
-$groups$delegate: true
+$delegate$auto: true
+$delegate$auto$groups: true
 
 _style:
-  $groups$delegate$into: false
-  $groups$delegate: false
-  $groups$matter$into: false
-  $groups$matter: false
+  $delegate$child: false
+  $delegate$auto: false
 

@@ -1,0 +1,36 @@
+$content$auto: true
+$content$auto$groups: true
+
+_style:
+  $content$child: false
+  $content$auto: false
+
+$content:
+- algebra
+- geometry
+- combinatorics
+- olympiad
+
+$content$order: date
+
+algebra:
+geometry:
+combinatorics:
+olympiad:
+
+ashap-link:
+  $content$child: false
+  $delegate$child: false
+  $content[print]:
+  - verbatim: |-
+      \begin{footnotesize}\flushright
+      %А.\,В.\,Шаповалов,
+      \texttt{www.ashap.info/Uroki/Mosbory/2018o}
+      \par\end{footnotesize}
+  $content[-print]:
+  - verbatim: |-
+      \begin{footnotesize}\flushright
+      %А.\,В.\,Шаповалов,
+      \url{www.ashap.info/Uroki/Mosbory/2018o}
+      \par\end{footnotesize}
+

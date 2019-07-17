@@ -1,5 +1,5 @@
 $style:
-- delegate: /_style
+- /_style/
 - verbatim: |-
     \renewcommand\jeolminstitution
         {Московские сборы по математике}

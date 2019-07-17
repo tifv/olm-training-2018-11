@@ -1,15 +1,12 @@
-% $groups$delegate: false
-% $groups$delegate$into: false
-% $groups$matter: false
-% $groups$matter$into: false
+% $delegate$child: false
+% $content$child: false
+% $delegate$auto$groups: false
+% $content$auto$groups: false
 
-% $matter[-header,-no-header]:
-% - .[no-header]
-
-% $matter[-matter-guard,no-header]:
+% $content[-contained]:
 % - verbatim: \begingroup \let\ifsourcelinks\iftrue
 %   condition: source-link
-% - .[matter-guard]
+% - .[contained]
 % - verbatim: \endgroup % \let\ifsourcelinks
 %   condition: source-link
 
@@ -41,10 +38,10 @@
 
 Материалы разбиты по~группам, в~пределах каждой группы отсортированы по~темам:
 \begin{itemize}
-    \item \emph{тренировочные олимпиады;}
     \item алгебра;
     \item геометрия;
     \item комбинаторика;
+    \item тренировочные олимпиады;
 \end{itemize}
 
 Материалы, общие для нескольких групп, дублируются.
@@ -53,7 +50,10 @@
 \fi
 
 
-%\subsection*{Немного об~авторах}
+\subsection*{Немного об~авторах}
+
+Материалы занятий Александра Васильевича Шаповалова можно найти на его сайте:\\
+\url{www.ashap.info/Uroki/Mosbory/2018o}
 
 
 \endgroup % \def\ifsourcelinks \def\url

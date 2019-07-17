@@ -1,0 +1,88 @@
+Integral:
+  $delegate$child: false
+  $delegate$auto: false
+  $content$child: false
+  $content$auto: false
+
+  $style:
+  - verbatim: \documentclass[10pt,a4paper]{book}
+    provide: documentclass
+  - style:
+    - /[no-document-class]
+    condition: -source-link
+  - style:
+    - /[no-document-class,colour-links]
+    condition: source-link
+  - package: tocloft
+  - package: hyperref
+    options:
+      suggested: [bookmarks=false]
+    condition: -print
+  - verbatim: |
+      \def\contentsdelineator#1{%
+        \addtocontents{toc}{\cftpagenumbersoff{section}}%
+        \addtocontents{toc}{\string\contentsline{section}{\textbf{#1}}{}{}}%
+        \addtocontents{toc}{\cftpagenumberson{section}}%
+      }
+    condition: print
+  - verbatim: |
+      \def\contentsdelineator#1{\phantomsection
+        \addtocontents{toc}{\cftpagenumbersoff{section}}%
+        \addtocontents{toc}{\string\contentsline{section}{\textbf{#1}}{}{}}%
+        \addtocontents{toc}{\cftpagenumberson{section}}%
+      }
+    condition: -print
+
+  $content[-integral]:
+
+  - error:
+      "'source-link' and 'print' options are incompatible"
+    condition: [source-link, print]
+
+  - verbatim: \frontmatter
+  - content: # new page
+    - /_integral/
+  - verbatim: \tableofcontents
+
+  - verbatim: \mainmatter
+  - content: # new page
+    - .[integral]
+
+  - verbatim: \appendix\chapter{Анонсы лекций}
+  - content:
+    - /lection
+
+  $content[integral]:
+  - g9r1
+  - g9r2
+  - g10r1
+  - g10r2
+  - g11r1
+  - g11r2
+  - gX
+
+  g9r1:  {$content: [{special: chapter}]}
+  g9r2:  {$content: [{special: chapter}]}
+  g10r1: {$content: [{special: chapter}]}
+  g10r2: {$content: [{special: chapter}]}
+  g11r1: {$content: [{special: chapter}]}
+  g11r2: {$content: [{special: chapter}]}
+  gX:    {$content: [{special: chapter}]}
+
+$content[integral,-ashap-guard]:
+- .[ashap-guard]
+
+$content[integral]:
+- content:
+  - verbatim: \contentsdelineator{Алгебра}
+  - algebra
+- content:
+  - verbatim: \contentsdelineator{Геометрия}
+  - geometry
+- content:
+  - verbatim: \contentsdelineator{Комбинаторика}
+  - combinatorics
+- content:
+  - verbatim: \contentsdelineator{Тренировочные олимпиады}
+  - olympiad
+
